@@ -1,49 +1,141 @@
+/* General Styles */
 body {
-    font-family: "Montserrat", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-.russo-one-regular {
-    font-family: "Russo One", serif;
-    font-weight: 400;
-    font-style: normal;
+h1,
+h2,
+h3 {
+    margin: 0;
 }
 
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Russo One', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
 .header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
-.contact-btn {
-    border: 1px solid black;
-    background-color: rgb(0, 157, 255);
+.brand {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.8rem;
+}
+
+.btn {
     padding: 10px 20px;
-    color: aliceblue;
-    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.project {
-    border: 1px solid black;
-    border-radius: 10px;
+.btn-contact {
+    background-color: #009dff;
+    color: #fff;
+    border: none;
+}
+
+/* Projects Section */
+.projects {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.project-card {
     display: flex;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
 }
 
 .project-image {
-    background-color: rgb(0, 97, 65);
+    background-color: #006141;
     width: 150px;
     height: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.project-details {
+    flex: 1;
+}
+
+.project-title {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.project-description {
+    margin-bottom: 10px;
+    color: #555;
 }
 
 .tech-stack {
-    display: flex;
     list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#contact-form {
-    border: 1px solid black;
+.tech-stack li {
+    background-color: #eaeaea;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Contact Form */
+#contact {
     padding: 20px;
+    background-color: #fff;
+}
+
+.form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea,
+button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.btn-submit {
+    background-color: #009dff;
+    color: #fff;
+    border: none;
 }

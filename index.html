@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Arash A. Portfolio</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h2 class="russo-one-regular">[ArashA.]</h2>
+        <a class="contact-btn" href="#contact-form">Get In Touch</a>
+    </header>
+    <!-- Projects -->
+    <main>
+        <h2 class="russo-one-regular">My Projects</h2>
+        <div class="project">
+            <div class="project-image"></div>
+            <div class="project-info">
+                <h3 class="project-heading">My awesome Project</h3>
+                <p class="project-info">
+                    This is a project that is perfect. nothing is wrong with it and it's tested
+                    and shit
+                </p>
+                <ul class="tech-stack">
+                    <li>ReactJS</li>
+                    <li>Express</li>
+                    <li>PostgreSQL</li>
+                    <li>Docker</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- Contact form -->
+    <form id="contact-form">
+        <label for="sender-name">Your Name:</label>
+        <input type="text" name="sender-name" id="sender-name" required>
+        <label for="sender-email">Your Email:</label>
+        <input type="email" name="sender-email" id="sender-email" required>
+        <label for="sender-msg">Your Message:</label>
+        <textarea name="sender-msg" id="sender-msg"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <script src="index.js"></script>
+</body>
+
+</html>

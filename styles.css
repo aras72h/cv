@@ -1,9 +1,25 @@
+/* Variables */
+:root {
+    --primary-color: #FD7E14;
+    --primary-text: #1A1F2C;
+    --secondary-text: #454D60;
+    --text-light: #576076;
+    --background-color: #F9F4ED;
+    --primary-border: #E8DDCE;
+    --secondary-border: #1A1F2C;
+    --black: #0C0C0d;
+    --white: #FFF;
+    --main-font: 'Montserrat', sans-serif;
+    --secondary-font: 'Russo One', sans-serif;
+}
+
 /* General Styles */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--main-font);
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-color: var(--background-color);
 }
 
 h1,
@@ -18,7 +34,7 @@ h3 {
 }
 
 .section-title {
-    font-family: 'Russo One', sans-serif;
+    font-family: var(--secondary-font);
     margin-bottom: 20px;
     font-size: 1.5rem;
 }
@@ -33,13 +49,17 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #f4f4f4;
+    padding: 10px 20px;
+    background-color: var(--white);
+    border: 1px solid var(--primary-border);
+    border-radius: 10px;
+    margin: 10px;
 }
 
 .brand {
-    font-family: 'Russo One', sans-serif;
+    font-family: var(--secondary-font);
     font-size: 1.8rem;
+    letter-spacing: +1px;
 }
 
 .btn {
@@ -49,28 +69,31 @@ a {
 }
 
 .btn-contact {
-    background-color: #009dff;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white);
     border: none;
 }
 
 /* Projects Section */
 .projects {
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--white);
+    border: 1px solid var(--primary-border);
+    border-radius: 10px;
+    margin: 0 10px;
 }
 
 .project-card {
     display: flex;
-    border: 1px solid #ccc;
+    border: 1px solid var(--primary-border);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: var(--white);
 }
 
 .project-image {
-    background-color: #006141;
+    background-color: #fdc882;
     width: 150px;
     height: 150px;
     margin-right: 20px;
@@ -111,7 +134,10 @@ a {
 /* Contact Form */
 #contact {
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--white);
+    border: 1px solid var(--primary-border);
+    border-radius: 10px;
+    margin: 10px;
 }
 
 .form {
@@ -125,7 +151,7 @@ textarea,
 button {
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--primary-border);
     border-radius: 5px;
 }
 
@@ -135,7 +161,7 @@ textarea {
 }
 
 .btn-submit {
-    background-color: #009dff;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white);
     border: none;
 }

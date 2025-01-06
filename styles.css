@@ -1,11 +1,14 @@
 /* Variables */
 :root {
     --primary-color: #FD7E14;
+    /* --primary-color: #147EFD; */
     --primary-text: #1A1F2C;
     --secondary-text: #454D60;
     --text-light: #576076;
     --background-color: #F9F4ED;
+    /* --background-color: #EDF4F9; */
     --primary-border: #E8DDCE;
+    /* --primary-border: #CEDDE8; */
     --secondary-border: #1A1F2C;
     --black: #0C0C0d;
     --white: #FFF;

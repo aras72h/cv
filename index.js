@@ -86,7 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const article = document.createElement("article");
         article.className = "project-card";
 
-        const projectImage = document.createElement("div");
+        const projectImage = document.createElement("canvas");
+        generateImg(projectImage)
         projectImage.className = "project-image";
         article.appendChild(projectImage);
 
@@ -118,3 +119,70 @@ document.addEventListener("DOMContentLoaded", () => {
         projectsContainer.appendChild(article);
     });
 });
+
+
+function generateImg(canvas) {
+    // const canvas = document.getElementById('artCanvas');
+    const ctx = canvas.getContext('2d');
+    const canvasSize = canvas.width;
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function getRandomStrokeWidth() {
+        // Stroke width variation between 2 and 5
+        return getRandomInt(1, 1.5);
+    }
+
+    function drawLine(x, y, length, angle) {
+        const x2 = x + length * Math.cos(angle);
+        const y2 = y + length * Math.sin(angle) * 7;
+
+        ctx.beginPath();
+        ctx.strokeStyle = '#FD7E14'; // Set fixed color
+        ctx.lineWidth = getRandomStrokeWidth();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+    }
+
+    function drawFilledRectangle(x, y, width, height) {
+        ctx.beginPath();
+        ctx.fillStyle = '#FD7E14'; // Set fixed color
+        ctx.fillRect(x, y, width, height);
+    }
+
+    function generateArt(pieceCount = 200) {
+        ctx.clearRect(0, 0, canvasSize, canvasSize);
+
+        ctx.fillStyle = '#F9F4ED'
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+        const gridSize = 100; // Grid size
+        const cellSize = canvasSize / gridSize; // Grid cell size
+
+        for (let i = 0; i < pieceCount; i++) {
+            // Structured position: random within each grid cell
+            const baseX = getRandomInt(0, gridSize - 1) * cellSize;
+            const baseY = getRandomInt(0, gridSize - 1) * cellSize;
+
+            // Randomly decide to draw either a line or a rectangle
+            if (Math.random() > 0.5) {
+                // Draw line with random length and angle
+                const length = getRandomInt(cellSize / 2, cellSize);
+                const angle = getRandomInt(0, 3) * (Math.PI / 2); // Only 90-degree rotations
+                drawLine(baseX + getRandomInt(0, cellSize), baseY + getRandomInt(0, cellSize), length, angle);
+            } else {
+                // Draw filled rectangle with random size
+                const width = getRandomInt(cellSize * 6, cellSize);
+                const height = getRandomInt(cellSize / 4, cellSize);
+                drawFilledRectangle(baseX + getRandomInt(0, cellSize / 2), baseY + getRandomInt(0, cellSize / 2), width, height);
+            }
+        }
+    }
+
+    // Generate art on page load
+    return generateArt();
+
+}

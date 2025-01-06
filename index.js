@@ -10,6 +10,68 @@ const data = [
             "Live Demo": "https://music-brief-react.vercel.app/",
         },
     },
+    {
+        id: 2,
+        title: "Notes RESTful API",
+        description:
+            "A Note-Taking API built with Node.js, Express, Sequelize, and PostgreSQL. It supports user registration, authentication, and CRUD operations for notes, notebooks, and tags. Features secure password hashing with bcrypt and JWT for authentication.",
+        techStack: ["NodeJS", "JavaScript", "ExpressJS", "PostgreSQL", "JWT Tokens", "bcrypt", "Sequelize ORM"],
+        links: {
+            "Project Repo": "https://github.com/aras72h/notes-api",
+        },
+    },
+    {
+        id: 3,
+        title: "Blog RESTful API",
+        description:
+            "A Blog API built with Node.js, Express, Sequelize, and PostgreSQL. It supports user registration, authentication, and CRUD operations for blog posts, and likes. Features secure password hashing with bcrypt and JWT for authentication.",
+        techStack: ["NodeJS", "JavaScript", "ExpressJS", "PostgreSQL", "JWT Tokens", "bcrypt", "Sequelize ORM"],
+        links: {
+            "Project Repo": "https://github.com/aras72h/simple-blog-api",
+        },
+    },
+    {
+        id: 4,
+        title: "Authentication RESTful API",
+        description:
+            "This is a user authentication API built with Node.js, Express, and Sequelize. It allows users to register, log in, update their information, delete their accounts, and manage password recovery.",
+        techStack: ["NodeJS", "JavaScript", "ExpressJS", "PostgreSQL", "JWT Tokens", "bcrypt", "Sequelize ORM"],
+        links: {
+            "Project Repo": "https://github.com/aras72h/auth-api",
+        },
+    },
+    {
+        id: 5,
+        title: "Responsive Web Page",
+        description:
+            "Responsive page showcasing information about Roger Linn, the renowned designer of electronic music products.",
+        techStack: ["HTML", "CSS", "Modular Scale"],
+        links: {
+            "Project Repo": "https://github.com/aras72h/roger-linn",
+            "Live Demo": "https://aras72h.github.io/roger-linn/",
+        },
+    },
+    {
+        id: 6,
+        title: "Interactive Rating Component",
+        description:
+            "Interactive and Responsive rating component",
+        techStack: ["HTML", "CSS", "Modular Scale", "JavaScript"],
+        links: {
+            "Project Repo": "https://github.com/aras72h/interactive-rating-component",
+            "Live Demo": "https://aras72h.github.io/interactive-rating-component/",
+        },
+    },
+    {
+        id: 7,
+        title: "To-Do API",
+        description:
+            "RESTful API for managing tasks and lists, built with Node.js, Express, and PostgreSQL. Features user authentication with JWT, and supports CRUD operations for tasks and lists.",
+        techStack: ["HTML", "CSS", "Modular Scale"],
+        links: {
+            "Project Repo": "https://github.com/aras72h/todo-api",
+        },
+    },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

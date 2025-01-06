@@ -120,6 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+const bgImg = document.getElementById('bg-img')
+bgImg.width = 4000
+bgImg.height = 4000
+generateImg(bgImg)
+
 
 function generateImg(canvas) {
     // const canvas = document.getElementById('artCanvas');

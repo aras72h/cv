@@ -17,12 +17,31 @@
 }
 
 /* General Styles */
+html {
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+}
+
 body {
     font-family: var(--main-font);
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: var(--background-color);
+    /* height: 100%; */
+}
+
+#bg-img {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* height: 100%; */
+    /* width: 100%; */
+    filter: blur(1rem);
+    /* filter: brightness(50%); */
 }
 
 h1,

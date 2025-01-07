@@ -187,3 +187,13 @@ textarea {
     color: var(--white);
     border: none;
 }
+
+@media (max-width: 600px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-image {
+        margin: 0 auto;
+    }
+}

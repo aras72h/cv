@@ -86,10 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const article = document.createElement("article");
         article.className = "project-card";
 
+        const imageContainer = document.createElement('div')
+        imageContainer.className = 'image-container'
+        article.appendChild(imageContainer)
+
         const projectImage = document.createElement("canvas");
+        projectImage.width = 800
+        projectImage.height = 400
         generateImg(projectImage)
         projectImage.className = "project-image";
-        article.appendChild(projectImage);
+        imageContainer.appendChild(projectImage);
 
         const projectDetails = document.createElement("div");
         projectDetails.className = "project-details";

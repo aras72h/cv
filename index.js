@@ -108,7 +108,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const projectDescription = document.createElement("p");
         projectDescription.className = "project-description";
-        projectDescription.textContent = project.description;
+        const description = project.description
+        const wc = description.split(' ').length
+        if (wc > 15) {
+            // Add Read more ... option
+            // tranc + span
+            const shortText = project.description.slice(0, 90)
+            const dots = '...'
+            const readMore = document.createElement('button')
+            readMore.className = 'more-btn'
+            readMore.innerText = 'Read More'
+            readMore.addEventListener('click', () => {
+                projectDescription.textContent = project.description
+            })
+            projectDescription.textContent = shortText + dots
+            projectDescription.appendChild(readMore)
+        } else {
+            projectDescription.textContent = project.description
+        }
         projectDetails.appendChild(projectDescription);
 
         const techStack = document.createElement("ul");

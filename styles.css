@@ -192,6 +192,21 @@ a {
     background-color: var(--primary-border);
 }
 
+.project-links {
+    list-style: none;
+    display: flex;
+}
+
+.project-link {
+    /* border: 1px solid var(--primary-border); */
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 0 5px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-weight: 700;
+}
+
 .tech-stack {
     list-style: none;
     padding: 0;

@@ -5,10 +5,16 @@ const data = [
         description:
             "Creating a music project or composing a song involves countless decisions, and our capacity to make good decisions each day is limited. That’s where Music Brief comes in! This project helps kickstart your music-making process by generating randomized starting points for your creative journey.With Music Brief, you’ll get a name, tempo, musical scale, arrangement, deadline, and more—all at the click of a button. Plus, you can easily export your generated ideas as a PDF, so you’re ready to dive straight into creating.",
         techStack: ["ReactJS", "JavaScript", "HTML", "CSS", "Vercel"],
-        links: {
-            "Project Repo": "https://github.com/aras72h/music-brief-react",
-            "Live Demo": "https://music-brief-react.vercel.app/",
-        },
+        links: [
+            {
+                name: "Project Repo",
+                url: "https://github.com/aras72h/music-brief-react"
+            },
+            {
+                name: "Live Demo",
+                url: "https://music-brief-react.vercel.app/"
+            },
+        ]
     },
     {
         id: 2,
@@ -16,9 +22,12 @@ const data = [
         description:
             "A Note-Taking API built with Node.js, Express, Sequelize, and PostgreSQL. It supports user registration, authentication, and CRUD operations for notes, notebooks, and tags. Features secure password hashing with bcrypt and JWT for authentication.",
         techStack: ["NodeJS", "JavaScript", "ExpressJS", "PostgreSQL", "JWT Tokens", "bcrypt", "Sequelize ORM"],
-        links: {
-            "Project Repo": "https://github.com/aras72h/notes-api",
-        },
+        links: [
+            {
+                name: "Project Repo",
+                url: "https://github.com/aras72h/notes-api"
+            },
+        ]
     },
     {
         id: 3,
@@ -26,9 +35,12 @@ const data = [
         description:
             "A Blog API built with Node.js, Express, Sequelize, and PostgreSQL. It supports user registration, authentication, and CRUD operations for blog posts, and likes. Features secure password hashing with bcrypt and JWT for authentication.",
         techStack: ["NodeJS", "JavaScript", "ExpressJS", "PostgreSQL", "JWT Tokens", "bcrypt", "Sequelize ORM"],
-        links: {
-            "Project Repo": "https://github.com/aras72h/simple-blog-api",
-        },
+        links: [
+            {
+                name: "Project Repo",
+                url: "https://github.com/aras72h/simple-blog-api"
+            },
+        ]
     },
     {
         id: 4,
@@ -36,9 +48,12 @@ const data = [
         description:
             "This is a user authentication API built with Node.js, Express, and Sequelize. It allows users to register, log in, update their information, delete their accounts, and manage password recovery.",
         techStack: ["NodeJS", "JavaScript", "ExpressJS", "PostgreSQL", "JWT Tokens", "bcrypt", "Sequelize ORM"],
-        links: {
-            "Project Repo": "https://github.com/aras72h/auth-api",
-        },
+        links: [
+            {
+                name: "Project Repo",
+                url: "https://github.com/aras72h/auth-api"
+            },
+        ]
     },
     {
         id: 5,
@@ -46,10 +61,16 @@ const data = [
         description:
             "Responsive page showcasing information about Roger Linn, the renowned designer of electronic music products.",
         techStack: ["HTML", "CSS", "Modular Scale"],
-        links: {
-            "Project Repo": "https://github.com/aras72h/roger-linn",
-            "Live Demo": "https://aras72h.github.io/roger-linn/",
-        },
+        links: [
+            {
+                name: "Project Repo",
+                url: "https://github.com/aras72h/roger-linn"
+            },
+            {
+                name: "Live Demo",
+                url: "https://aras72h.github.io/roger-linn/"
+            },
+        ]
     },
     {
         id: 6,
@@ -57,10 +78,16 @@ const data = [
         description:
             "Interactive and Responsive rating component",
         techStack: ["HTML", "CSS", "Modular Scale", "JavaScript"],
-        links: {
-            "Project Repo": "https://github.com/aras72h/interactive-rating-component",
-            "Live Demo": "https://aras72h.github.io/interactive-rating-component/",
-        },
+        links: [
+            {
+                name: "Project Repo",
+                url: "https://github.com/aras72h/interactive-rating-component"
+            },
+            {
+                name: "Live Demo",
+                url: "https://aras72h.github.io/interactive-rating-component/"
+            },
+        ]
     },
     {
         id: 7,
@@ -68,9 +95,12 @@ const data = [
         description:
             "RESTful API for managing tasks and lists, built with Node.js, Express, and PostgreSQL. Features user authentication with JWT, and supports CRUD operations for tasks and lists.",
         techStack: ["HTML", "CSS", "Modular Scale"],
-        links: {
-            "Project Repo": "https://github.com/aras72h/todo-api",
-        },
+        links: [
+            {
+                name: "Project Repo",
+                url: "https://github.com/aras72h/todo-api"
+            }
+        ]
     },
 ];
 
@@ -110,9 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
         projectDescription.className = "project-description";
         const description = project.description
         const wc = description.split(' ').length
+        /* Implements read more... option */
         if (wc > 15) {
-            // Add Read more ... option
-            // tranc + span
             const shortText = project.description.slice(0, 90)
             const dots = '...'
             const readMore = document.createElement('button')
@@ -127,6 +156,23 @@ document.addEventListener("DOMContentLoaded", () => {
             projectDescription.textContent = project.description
         }
         projectDetails.appendChild(projectDescription);
+
+        /* Project links */
+        const projectLinks = document.createElement("ul");
+        projectLinks.className = 'project-links'
+
+        project.links.forEach((link) => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = link.url;
+            a.textContent = link.name;
+            a.target = '_blank'
+            a.className = 'project-link'
+            li.appendChild(a);
+            projectLinks.appendChild(li)
+        });
+
+        projectDetails.appendChild(projectLinks)
 
         const techStack = document.createElement("ul");
         techStack.className = "tech-stack";

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Russo+One&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <title>Arash A. Portfolio</title>
 </head>
 
@@ -32,17 +33,18 @@
         <!-- Contact Form -->
         <section id="contact">
             <h2 class="section-title">Contact Me</h2>
+            <div id="error"></div>
             <form id="contact-form" class="form">
                 <label for="sender-name">Your Name:</label>
-                <input type="text" name="sender-name" id="sender-name" required>
+                <input type="text" name="user_name" id="sender-name" required>
 
                 <label for="sender-email">Your Email:</label>
-                <input type="email" name="sender-email" id="sender-email" required>
+                <input type="email" name="user_email" id="sender-email" required>
 
                 <label for="sender-msg">Your Message:</label>
-                <textarea name="sender-msg" id="sender-msg" required></textarea>
+                <textarea name="message" id="sender-msg" required></textarea>
 
-                <button type="submit" class="btn btn-submit">Send Message</button>
+                <button type="submit" class="btn btn-submit" id="contact-submit">Send Message</button>
             </form>
         </section>
 

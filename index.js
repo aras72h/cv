@@ -260,3 +260,35 @@ function generateImg(canvas) {
     return generateArt();
 
 }
+
+
+// Handle contact form
+(function () {
+    // https://dashboard.emailjs.com/admin/account
+    emailjs.init({
+        publicKey: "wVReMWaTJ5d9L-l0N",
+    });
+})();
+
+window.onload = function () {
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // these IDs from the previous steps
+        emailjs.sendForm('contact_service', 'contact_form', this)
+            .then(() => {
+                console.log('SUCCESS!');
+                const contactSection = document.getElementById('contact')
+                document.getElementById('contact-form').reset()
+                contactSection.innerHTML = '<h1>Success</h1>'
+            }, (error) => {
+                console.log('FAILED...', error);
+                const errorBox = document.getElementById('error')
+                const errorMsg = document.createElement('div')
+                errorMsg.innerHTML = 'Failed to send message. Please try again.'
+                errorMsg.className = 'error'
+                errorBox.appendChild(errorMsg)
+                setTimeout(() => { errorBox.removeChild(errorMsg) }, 3000)
+
+            });
+    });
+}
